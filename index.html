@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cobra en Línea Desde Hoy — Mercadeo MRR</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#EDEBE6;
+  --card:#ffffff;
+  --olive:#58592F;
+  --olive-light:#6d6e3a;
+  --gold:#9A7B32;
+  --gold-light:#BAA080;
+  --brown:#605343;
+  --white:#2a2518;
+  --gray:#7a7368;
+  --base:#D9D6CF;
+  --urgent:#c0392b;
+}
+html{scroll-behavior:auto}
+body{background:var(--bg);color:var(--white);font-family:'DM Sans',sans-serif;-webkit-font-smoothing:antialiased}
+
+/* ─── URGENCY BAR ─── */
+.urgency-bar{
+  background:var(--olive);
+  text-align:center;padding:12px 16px;
+  font-family:'Poppins',sans-serif;
+  font-size:14px;font-weight:700;
+  color:#fff;letter-spacing:0.03em;
+}
+.urgency-bar span{color:#f0d078}
+
+/* ─── HEADER ─── */
+.of-header{
+  background:rgba(237,235,230,0.95);
+  border-bottom:1px solid rgba(154,123,50,0.1);
+  padding:14px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.of-logo img{height:36px;width:auto}
+.of-header-cta{
+  background:var(--gold);color:#fff;
+  padding:8px 20px;border-radius:30px;
+  font-family:'Poppins',sans-serif;
+  font-weight:700;font-size:13px;
+  text-decoration:none;transition:all .3s;
+}
+.of-header-cta:hover{transform:scale(1.05);box-shadow:0 4px 20px rgba(154,123,50,0.3)}
+
+/* ─── HERO ─── */
+.of-hero{
+  text-align:center;padding:50px 24px 40px;
+  max-width:750px;margin:0 auto;
+}
+.of-badge{
+  display:inline-block;
+  background:var(--olive);color:#fff;
+  font-family:'Poppins',sans-serif;
+  font-size:12px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:8px 20px;border-radius:8px;margin-bottom:28px;
+}
+.of-hero h1{
+  font-family:'Poppins',sans-serif;
+  font-size:clamp(2rem,5vw,3.2rem);
+  font-weight:900;line-height:1.05;
+  margin-bottom:16px;color:var(--white);
+}
+.of-hero h1 em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;color:var(--olive);font-weight:400;
+}
+.of-hero-sub{
+  font-size:1.05rem;color:var(--gray);
+  line-height:1.7;max-width:560px;margin:0 auto 32px;
+}
+.of-hero-photo{
+  width:280px;height:280px;
+  border-radius:1.2rem;
+  object-fit:cover;object-position:top;
+  border:3px solid rgba(154,123,50,0.2);
+  box-shadow:0 12px 40px rgba(96,83,67,0.12);
+  margin-bottom:32px;
+}
+
+/* ─── PRICE BOX ─── */
+.of-price-box{
+  background:var(--card);
+  border:2px solid var(--olive);
+  border-radius:1.2rem;
+  padding:28px;
+  max-width:420px;margin:0 auto 40px;
+  text-align:center;
+  box-shadow:0 4px 24px rgba(0,0,0,0.05);
+}
+.of-price-label{
+  font-family:'Poppins',sans-serif;
+  font-size:12px;font-weight:700;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gray);margin-bottom:4px;
+}
+.of-price-regular{
+  font-size:13px;color:var(--gray);margin-bottom:6px;
+}
+.of-price-regular s{color:#b0a090}
+.of-price{
+  font-family:'Poppins',sans-serif;
+  font-size:3.5rem;font-weight:900;
+  color:var(--olive);line-height:1;
+  margin-bottom:4px;
+}
+.of-price span{font-size:1rem;color:var(--gray);font-weight:400}
+.of-price-note{font-size:0.85rem;color:var(--gray);margin-bottom:20px}
+.of-btn-cta{
+  display:flex;align-items:center;justify-content:center;gap:8px;
+  width:100%;
+  background:var(--olive);color:#fff;
+  padding:16px 28px;border-radius:50px;
+  font-family:'Poppins',sans-serif;
+  font-weight:700;font-size:16px;
+  text-decoration:none;
+  box-shadow:0 4px 20px rgba(88,89,47,0.25);
+  transition:all .3s;border:none;cursor:pointer;
+}
+.of-btn-cta:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 35px rgba(88,89,47,0.35);
+  background:var(--olive-light);
+}
+.of-price-secure{
+  font-size:12px;color:var(--gray);margin-top:12px;
+  display:flex;align-items:center;justify-content:center;gap:4px;
+}
+
+/* ─── WHAT'S INCLUDED ─── */
+.of-section{
+  max-width:700px;margin:0 auto;padding:0 24px 50px;
+}
+.of-section-label{
+  display:inline-flex;align-items:center;gap:8px;
+  font-family:'Poppins',sans-serif;
+  font-size:11px;font-weight:700;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:var(--olive);margin-bottom:12px;
+}
+.of-section-label::before{content:'';width:24px;height:2px;background:var(--olive)}
+.of-section h2{
+  font-family:'Poppins',sans-serif;
+  font-size:1.6rem;font-weight:800;
+  margin-bottom:28px;color:var(--white);
+}
+.of-section h2 em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;color:var(--olive);font-weight:400;
+}
+
+.of-includes{display:flex;flex-direction:column;gap:14px}
+.of-include{
+  display:flex;align-items:flex-start;gap:16px;
+  background:var(--card);
+  border:1px solid rgba(154,123,50,0.1);
+  border-radius:14px;padding:22px 24px;
+  box-shadow:0 2px 10px rgba(0,0,0,0.03);
+  transition:all .3s;
+}
+.of-include:hover{border-color:rgba(88,89,47,0.2);transform:translateY(-2px)}
+.of-include-icon{
+  width:48px;height:48px;border-radius:12px;
+  background:rgba(88,89,47,0.08);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;flex-shrink:0;
+  filter:grayscale(1) sepia(1) hue-rotate(-5deg) saturate(2) brightness(0.75);
+}
+.of-include h3{
+  font-family:'Poppins',sans-serif;
+  font-size:1rem;font-weight:700;
+  color:var(--white);margin-bottom:4px;
+}
+.of-include p{font-size:0.88rem;color:var(--gray);line-height:1.5}
+
+/* ─── BONUS ─── */
+.of-bonus{
+  background:rgba(88,89,47,0.06);
+  border:1px solid rgba(88,89,47,0.15);
+  border-radius:14px;padding:24px;
+  text-align:center;margin-bottom:14px;
+}
+.of-bonus-tag{
+  display:inline-block;
+  background:var(--gold);color:#fff;
+  font-family:'Poppins',sans-serif;
+  font-size:11px;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;
+  padding:4px 14px;border-radius:20px;margin-bottom:10px;
+}
+.of-bonus h4{
+  font-family:'Poppins',sans-serif;
+  font-size:1rem;font-weight:700;
+  color:var(--white);margin-bottom:4px;
+}
+.of-bonus p{font-size:0.85rem;color:var(--gray)}
+
+/* ─── FOR WHO ─── */
+.of-for-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.of-for-list li{
+  display:flex;align-items:flex-start;gap:10px;
+  font-size:0.92rem;color:var(--gray);line-height:1.5;
+}
+.of-for-list li .ic{color:var(--olive);font-weight:700;flex-shrink:0;margin-top:2px}
+
+/* ─── PAYMENT OPTIONS ─── */
+.of-payments{
+  text-align:center;max-width:500px;margin:0 auto;
+  padding:0 24px 40px;
+}
+.of-payments h3{
+  font-family:'Poppins',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  margin-bottom:16px;color:var(--white);
+}
+.of-pay-logos{
+  display:flex;justify-content:center;gap:24px;
+  align-items:center;flex-wrap:wrap;
+  margin-bottom:20px;
+}
+.of-pay-logo{
+  background:var(--card);
+  border:1px solid rgba(154,123,50,0.1);
+  border-radius:10px;padding:10px 20px;
+  font-family:'Poppins',sans-serif;
+  font-weight:700;font-size:16px;
+  color:var(--gray);
+  box-shadow:0 2px 8px rgba(0,0,0,0.03);
+}
+.of-pay-logo.klarna{color:#ffb3c7}
+.of-pay-logo.afterpay{color:#b2fce4}
+.of-pay-logo.affirm{color:#4a90d9}
+
+/* ─── COUNTDOWN ─── */
+.of-countdown{
+  background:var(--olive);
+  padding:28px 24px;text-align:center;
+}
+.of-countdown h3{
+  font-family:'Poppins',sans-serif;
+  font-size:1.1rem;font-weight:700;
+  color:#fff;margin-bottom:12px;
+}
+.of-timer{
+  display:flex;justify-content:center;gap:12px;
+  margin-bottom:16px;
+}
+.of-timer-block{
+  background:rgba(255,255,255,0.15);
+  border-radius:10px;padding:12px 16px;
+  min-width:65px;text-align:center;
+}
+.of-timer-num{
+  font-family:'Poppins',sans-serif;
+  font-size:1.8rem;font-weight:900;
+  color:#fff;line-height:1;
+}
+.of-timer-label{
+  font-size:10px;color:rgba(255,255,255,0.7);
+  text-transform:uppercase;letter-spacing:0.1em;
+  margin-top:4px;
+}
+.of-countdown .of-btn-cta{
+  max-width:400px;margin:0 auto;
+  background:#fff;color:var(--olive);
+}
+.of-countdown .of-btn-cta:hover{background:#f5f3ee}
+
+/* ─── TESTIMONIALS ─── */
+.of-testimonials{
+  max-width:500px;margin:0 auto 40px;
+  background:var(--card);
+  border:1px solid rgba(154,123,50,0.1);
+  border-radius:14px;padding:28px;
+  text-align:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.03);
+  position:relative;min-height:200px;
+}
+.of-test{
+  opacity:0;position:absolute;top:28px;left:28px;right:28px;
+  transition:opacity 0.6s ease;pointer-events:none;
+}
+.of-test.active{opacity:1;position:relative;top:0;left:0;right:0;pointer-events:auto}
+.of-test .stars{color:var(--gold);font-size:14px;margin-bottom:10px}
+.of-test blockquote{font-size:0.92rem;color:var(--gray);line-height:1.6;font-style:italic;margin-bottom:12px}
+.of-test .author{font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;color:var(--olive)}
+.of-test .author-detail{font-size:11px;color:var(--gold);font-weight:500;margin-top:2px}
+.of-test-dots{display:flex;justify-content:center;gap:6px;margin-top:16px}
+.tdot{width:8px;height:8px;border-radius:50%;background:rgba(154,123,50,0.2);cursor:pointer;transition:all .3s}
+.tdot.active{background:var(--olive);transform:scale(1.2)}
+
+/* ─── FAQ ─── */
+.of-faq{display:flex;flex-direction:column;gap:10px}
+.of-faq-item{
+  background:var(--card);
+  border:1px solid rgba(154,123,50,0.08);
+  border-radius:12px;overflow:hidden;
+}
+.of-faq-q{
+  padding:16px 20px;cursor:pointer;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:'Poppins',sans-serif;
+  font-weight:600;font-size:14px;color:var(--white);
+}
+.of-faq-q .arr{color:var(--olive);font-size:18px;transition:transform .3s}
+.of-faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.of-faq-a-inner{padding:0 20px 16px;font-size:14px;color:var(--gray);line-height:1.6}
+.of-faq-item.open .of-faq-a{max-height:300px}
+.of-faq-item.open .arr{transform:rotate(45deg)}
+
+/* ─── FINAL CTA ─── */
+.of-final{
+  text-align:center;padding:50px 24px;
+  max-width:600px;margin:0 auto;
+}
+.of-final h2{
+  font-family:'Poppins',sans-serif;
+  font-size:1.8rem;font-weight:800;
+  margin-bottom:12px;color:var(--white);
+}
+.of-final h2 em{
+  font-family:'Playfair Display',serif;
+  font-style:italic;color:var(--olive);font-weight:400;
+}
+.of-final p{font-size:0.95rem;color:var(--gray);margin-bottom:24px;line-height:1.6}
+.of-final .of-btn-cta{max-width:400px;margin:0 auto}
+
+/* ─── FOOTER ─── */
+.of-footer{
+  text-align:center;padding:24px;
+  border-top:1px solid rgba(154,123,50,0.08);
+}
+.of-footer p{font-size:12px;color:var(--gray)}
+.of-footer a{color:var(--gold);text-decoration:none;font-weight:600}
+
+/* ─── FLOATING WHATSAPP ─── */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  width:56px;height:56px;border-radius:50%;
+  background:#25d366;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 20px rgba(37,211,102,0.4);
+  transition:transform .3s,box-shadow .3s;
+  text-decoration:none;
+}
+.wa-float:hover{transform:scale(1.1);box-shadow:0 8px 30px rgba(37,211,102,0.5)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:600px){
+  .of-hero{padding:36px 16px 30px}
+  .of-hero h1{font-size:1.8rem}
+  .of-hero-photo{width:200px;height:200px}
+  .of-section{padding:0 16px 40px}
+  .of-include{flex-direction:column;align-items:center;text-align:center}
+  .of-price{font-size:2.8rem}
+  .of-timer-block{padding:10px 12px;min-width:55px}
+  .of-timer-num{font-size:1.5rem}
+  .of-header{padding:10px 16px}
+  .of-logo img{height:30px}
+  .of-final h2{font-size:1.4rem}
+  .of-payments{padding:0 16px 30px}
+}
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/19197715951?text=%C2%A1Hola!%20%F0%9F%91%8B%20Vi%20la%20oferta%20de%20la%20landing%20page%20de%20%24275%20y%20quiero%20m%C3%A1s%20informaci%C3%B3n." class="wa-float" target="_top" title="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- URGENCY BAR -->
+<div class="urgency-bar">
+  ⏰ PROMOCIÓN VÁLIDA HASTA EL <span>1 DE MAYO</span> — Oferta exclusiva Impulsa Tu Marca
+</div>
+
+<!-- HEADER -->
+<header class="of-header">
+  <div class="of-logo"><img src="logo-mercadeo.png" alt="Mercadeo MRR"></div>
+  <a href="#comprar" class="of-header-cta">Quiero Mi Landing →</a>
+</header>
+
+<!-- HERO -->
+<div class="of-hero">
+  <div class="of-badge">Oferta Especial — Impulsa Tu Marca</div>
+  <h1>Cobra en línea <em>desde hoy</em></h1>
+  <p class="of-hero-sub">Tu landing page profesional lista para capturar clientes y cobrar en línea — con botón de pago Stripe y CRM básico incluido. Todo en un solo paquete.</p>
+  <img src="krystina.png" alt="Krystina Zambrano" class="of-hero-photo">
+
+  <!-- PRICE BOX -->
+  <div class="of-price-box" id="comprar">
+    <div class="of-price-label">Inversión única</div>
+    <div class="of-price-regular">Precio regular: <s>comenzando en $575 USD</s></div>
+    <div class="of-price">$275<span> USD</span></div>
+    <p class="of-price-note">Pago único · Incluye todo · Sin mensualidades<br><small style="font-size:11px;color:#b0a090">* No incluye dominio (se cotiza aparte)</small></p>
+    <!-- 🔗 REEMPLAZA CON TU LINK DE STRIPE -->
+    <a href="#TU-LINK-STRIPE-275" class="of-btn-cta" target="_top">
+      🔒 Quiero Mi Landing Page →
+    </a>
+    <div class="of-price-secure">🔒 Pago seguro con Stripe · Financiamiento disponible</div>
+  </div>
+</div>
+
+<!-- WHAT'S INCLUDED -->
+<div class="of-section">
+  <div class="of-section-label">¿Qué Incluye?</div>
+  <h2>Todo lo que necesitas para <em>vender en línea</em></h2>
+
+  <div class="of-includes">
+    <div class="of-include">
+      <div class="of-include-icon">🎯</div>
+      <div>
+        <h3>Landing Page Profesional</h3>
+        <p>Diseñada para capturar leads y cerrar ventas. Responsive, rápida y optimizada para convertir visitantes en clientes.</p>
+      </div>
+    </div>
+    <div class="of-include">
+      <div class="of-include-icon">💳</div>
+      <div>
+        <h3>Botón de Pago Stripe</h3>
+        <p>Cobra en línea de forma segura y automática. Acepta tarjetas de crédito, débito y más — el dinero llega directo a tu cuenta.</p>
+      </div>
+    </div>
+    <div class="of-include">
+      <div class="of-include-icon">📋</div>
+      <div>
+        <h3>CRM Básico Incluido</h3>
+        <p>Gestiona tus contactos, da seguimiento a tus clientes y organiza tu pipeline de ventas desde el primer día.</p>
+      </div>
+    </div>
+    <div class="of-include">
+      <div class="of-include-icon">📱</div>
+      <div>
+        <h3>Redirección a WhatsApp</h3>
+        <p>Tus clientes pueden contactarte directamente por WhatsApp desde tu landing page con un mensaje pre-armado.</p>
+      </div>
+    </div>
+    <div class="of-include">
+      <div class="of-include-icon">⚡</div>
+      <div>
+        <h3>Entrega en 5-7 Días</h3>
+        <p>Tu landing page lista y funcionando en menos de una semana. Hosting incluido, dominio se cotiza aparte.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BONUSES -->
+<div class="of-section">
+  <div class="of-section-label">Bonus Exclusivos</div>
+  <h2>Solo para asistentes de <em>Impulsa Tu Marca</em></h2>
+
+  <div class="of-bonus">
+    <div class="of-bonus-tag">Bonus #1</div>
+    <h4>Consulta Estratégica de 30 min (GRATIS)</h4>
+    <p>Una llamada 1:1 conmigo para definir tu mensaje, tu oferta y la estructura de tu landing antes de diseñarla.</p>
+  </div>
+  <div class="of-bonus">
+    <div class="of-bonus-tag">Bonus #2</div>
+    <h4>Guión de Texto para tu Landing</h4>
+    <p>No te preocupes por qué escribir — te entrego el copywriting listo para que tu página venda por ti.</p>
+  </div>
+  <div class="of-bonus">
+    <div class="of-bonus-tag">Bonus #3</div>
+    <h4>1 Revisión Incluida</h4>
+    <p>Después de la entrega tienes una ronda de revisión para ajustar detalles y asegurarnos de que quede perfecto.</p>
+  </div>
+</div>
+
+<!-- FOR WHO -->
+<div class="of-section">
+  <div class="of-section-label">¿Es Para Ti?</div>
+  <h2>Esto es para ti si...</h2>
+  <ul class="of-for-list">
+    <li><span class="ic">✓</span> Tienes un negocio o servicio pero no tienes presencia en línea</li>
+    <li><span class="ic">✓</span> Quieres empezar a cobrar por internet de forma profesional</li>
+    <li><span class="ic">✓</span> Estás cansado/a de que te paguen solo en efectivo o Zelle</li>
+    <li><span class="ic">✓</span> Necesitas una página que explique lo que haces y genere confianza</li>
+    <li><span class="ic">✓</span> No tienes tiempo ni conocimiento para hacerlo tú mismo/a</li>
+    <li><span class="ic">✓</span> Quieres dar el paso de emprendimiento informal a negocio profesional</li>
+  </ul>
+</div>
+
+<!-- TESTIMONIALS -->
+<div class="of-section" style="padding-bottom:20px">
+  <div class="of-section-label">Resultados Reales</div>
+  <h2>Clientes que ya <em>confían</em> en nosotros</h2>
+</div>
+
+<div class="of-testimonials">
+  <div class="of-test active">
+    <div class="stars">★★★★★</div>
+    <blockquote>"Krystina me hizo la landing page para Impulsa Tu Marca en su novena edición. El resultado fue increíble — profesional, claro y listo para vender."</blockquote>
+    <div class="author">— Mary Claudia</div>
+    <div class="author-detail">Impulsa Tu Marca — 9na Edición</div>
+  </div>
+  <div class="of-test">
+    <div class="stars">★★★★★</div>
+    <blockquote>"Krystina creó la landing page de mi membresía Latinos que Brillan y capturó exactamente lo que quería transmitir. Desde que la lancé, todo se ve mucho más profesional."</blockquote>
+    <div class="author">— Laura Ávila</div>
+    <div class="author-detail">Latinos que Brillan — Membresía</div>
+  </div>
+  <div class="of-test">
+    <div class="stars">★★★★★</div>
+    <blockquote>"Krystina creó la landing page del Método MAMP y capturó la esencia de lo que ofrezco. Mis clientes me encuentran más fácil y confían más en mi servicio."</blockquote>
+    <div class="author">— Clara Torres</div>
+    <div class="author-detail">Método MAMP</div>
+  </div>
+  <div class="of-test-dots">
+    <span class="tdot active" onclick="goTest(0)"></span>
+    <span class="tdot" onclick="goTest(1)"></span>
+    <span class="tdot" onclick="goTest(2)"></span>
+  </div>
+</div>
+
+<!-- PAYMENT OPTIONS -->
+<div class="of-payments">
+  <h3>Paga en cuotas con:</h3>
+  <div class="of-pay-logos">
+    <div class="of-pay-logo klarna">Klarna.</div>
+    <div class="of-pay-logo afterpay">afterpay</div>
+    <div class="of-pay-logo affirm">affirm</div>
+  </div>
+  <p style="font-size:13px;color:var(--gray)">Financiamiento disponible en el checkout · Solo USA</p>
+</div>
+
+<!-- FAQ -->
+<div class="of-section">
+  <div class="of-section-label">Preguntas Frecuentes</div>
+  <h2>Resolvemos tus <em>dudas</em></h2>
+  <div class="of-faq">
+    <div class="of-faq-item"><div class="of-faq-q">¿Qué necesito para empezar? <span class="arr">+</span></div><div class="of-faq-a"><div class="of-faq-a-inner">Solo necesitas tu logo (si tienes), fotos de tu negocio o producto, y una descripción de lo que ofreces. Si no tienes nada de eso, te ayudamos a crearlo en la consulta estratégica incluida.</div></div></div>
+    <div class="of-faq-item"><div class="of-faq-q">¿Cuánto tiempo tarda? <span class="arr">+</span></div><div class="of-faq-a"><div class="of-faq-a-inner">Tu landing page estará lista en 5-7 días hábiles después de la consulta estratégica. Incluye una ronda de revisión.</div></div></div>
+    <div class="of-faq-item"><div class="of-faq-q">¿Necesito saber de tecnología? <span class="arr">+</span></div><div class="of-faq-a"><div class="of-faq-a-inner">No. Nosotros nos encargamos de todo: diseño, configuración de Stripe, hosting y CRM. El dominio no está incluido pero te ayudamos a conseguirlo y configurarlo por un costo adicional.</div></div></div>
+    <div class="of-faq-item"><div class="of-faq-q">¿Qué es el CRM básico? <span class="arr">+</span></div><div class="of-faq-a"><div class="of-faq-a-inner">Es un sistema para gestionar tus contactos y clientes. Cada persona que llene un formulario en tu página se guarda automáticamente para que puedas darle seguimiento.</div></div></div>
+    <div class="of-faq-item"><div class="of-faq-q">¿Puedo pagar en cuotas? <span class="arr">+</span></div><div class="of-faq-a"><div class="of-faq-a-inner">Sí. En el checkout puedes usar Klarna, Afterpay o Affirm para dividir tu pago en cuotas (disponible solo en USA).</div></div></div>
+    <div class="of-faq-item"><div class="of-faq-q">¿Hasta cuándo está disponible esta oferta? <span class="arr">+</span></div><div class="of-faq-a"><div class="of-faq-a-inner">Esta promoción especial de $275 es exclusiva para asistentes del taller Impulsa Tu Marca y es válida hasta el 1 de mayo de 2026. Después el precio sube.</div></div></div>
+  </div>
+</div>
+
+<!-- COUNTDOWN -->
+<div class="of-countdown">
+  <h3>⏰ Esta oferta expira en:</h3>
+  <div class="of-timer">
+    <div class="of-timer-block"><div class="of-timer-num" id="days">00</div><div class="of-timer-label">Días</div></div>
+    <div class="of-timer-block"><div class="of-timer-num" id="hours">00</div><div class="of-timer-label">Horas</div></div>
+    <div class="of-timer-block"><div class="of-timer-num" id="mins">00</div><div class="of-timer-label">Min</div></div>
+    <div class="of-timer-block"><div class="of-timer-num" id="secs">00</div><div class="of-timer-label">Seg</div></div>
+  </div>
+  <!-- 🔗 REEMPLAZA CON TU LINK DE STRIPE -->
+  <a href="#TU-LINK-STRIPE-275" class="of-btn-cta" target="_top">Quiero Mi Landing Page — $275 →</a>
+</div>
+
+<!-- FINAL CTA -->
+<div class="of-final">
+  <h2>Deja de perder clientes por no tener <em>presencia en línea</em></h2>
+  <p>Invierte $275 hoy y empieza a cobrar en línea de forma profesional esta misma semana. Sin excusas, sin complicaciones.</p>
+  <!-- 🔗 REEMPLAZA CON TU LINK DE STRIPE -->
+  <a href="#TU-LINK-STRIPE-275" class="of-btn-cta" target="_top">🔒 Comprar Ahora — $275 USD →</a>
+</div>
+
+<!-- FOOTER -->
+<div class="of-footer">
+  <p>© 2026 <a href="https://www.mercadeomrr.com">Mercadeo MRR LLC</a> · Krystina Zambrano · Houston, TX</p>
+  <p style="margin-top:6px">+1 (919) 771-5951 · www.mercadeomrr.com</p>
+</div>
+
+<script>
+// FAQ
+document.querySelectorAll('.of-faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    document.querySelectorAll('.of-faq-item').forEach(i=>{if(i!==item)i.classList.remove('open')});
+    item.classList.toggle('open');
+  });
+});
+
+// Testimonial Carousel
+let curTest = 0;
+const tests = document.querySelectorAll('.of-test');
+const tdots = document.querySelectorAll('.tdot');
+function goTest(i){
+  tests[curTest].classList.remove('active');
+  tdots[curTest].classList.remove('active');
+  curTest = i;
+  tests[curTest].classList.add('active');
+  tdots[curTest].classList.add('active');
+}
+setInterval(()=>{ goTest((curTest+1) % tests.length); }, 5000);
+
+// Countdown to May 1, 2026
+const deadline = new Date('2026-05-01T23:59:59').getTime();
+function updateTimer(){
+  const now = new Date().getTime();
+  const diff = deadline - now;
+  if(diff <= 0){
+    document.getElementById('days').textContent = '00';
+    document.getElementById('hours').textContent = '00';
+    document.getElementById('mins').textContent = '00';
+    document.getElementById('secs').textContent = '00';
+    return;
+  }
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%(1000*60))/1000);
+  document.getElementById('days').textContent = d.toString().padStart(2,'0');
+  document.getElementById('hours').textContent = h.toString().padStart(2,'0');
+  document.getElementById('mins').textContent = m.toString().padStart(2,'0');
+  document.getElementById('secs').textContent = s.toString().padStart(2,'0');
+}
+updateTimer();
+setInterval(updateTimer, 1000);
+</script>
+
+</body>
+</html>
